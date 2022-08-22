@@ -5,14 +5,18 @@
     box-sizing: border-box;
 }
 
-h1 {
-    background-color: rgb(112, 92, 112);
-    text-align: center;
-    font-size: 4rem;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-style: italic;
-    color: whitesmoke;
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+
+.header__img{
+    height: 35vh;
+    width: auto;
+}
+
 
 .img {
     display: flex;
@@ -45,6 +49,14 @@ h1 {
     font-size: 1.20rem;
 }
 
+.fondo{
+    background-image:url(../img/fondocontacto.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;   
+}
+
 .wajapen__img {
     height: 45px;
     width: 45px;
@@ -52,6 +64,7 @@ h1 {
     right: 1rem;
     box-sizing: border-box;
     position: fixed;
+    
 }
 
 .subtitulo {
@@ -71,10 +84,10 @@ h1 {
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 5rem;
     margin-left: 1rem;
     margin-right: 1rem;
+    padding-bottom: 5rem;
     text-align: center;
 }
 
@@ -100,8 +113,9 @@ h1 {
 }
 
 .caja__fija {
+    background:whitesmoke;
     border: solid 3px black;
-    width: 280px;
+    width: 250px;
 }
 
 button {
@@ -113,7 +127,6 @@ button {
 
 
 .titulord {
-    margin-top: 100px;
     background-color: rgb(112, 92, 112);
     text-align: center;
     color: whitesmoke;
@@ -146,7 +159,6 @@ button {
 }
 
 #footer {
-    margin-top: 200px;
     margin-bottom: 20px;
     text-align: center;
     font-size: 0.8rem;
@@ -157,7 +169,6 @@ button {
 /* estilo de quienes somos */
 
 .quienes__container {
-    margin: 1em;
     display: flex;
     flex-direction: column;
 }
@@ -198,7 +209,7 @@ button {
 
 .productos__container {
     display: flex;
-
+    justify-content: space-around;
 }
 
 .productos__sidebar {
@@ -238,8 +249,11 @@ button {
 .productos__pagination {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin: 5rem;
+    gap:10rem;
+    justify-content:center;
+    margin-right: 1rem;
+    
+
 }
 
 .productos__nextpage {
@@ -253,6 +267,7 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 5rem;
 }
 
 /* estilos de catalogo */
@@ -260,15 +275,18 @@ button {
 .catalago{
     display: grid;
     grid-template-columns: 1fr;
+    padding: 5rem;
 }
 
 .catalogo__container{
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-color: blue;
+    border-color: rgb(68, 255, 0);
     border-radius: 1rem;
     margin-top: 3rem;
+    padding-top: 5rem;
+    border:solid 3px;
 }
 
 .catalago__container--img{
@@ -285,10 +303,6 @@ button {
 }
 
 /* estilos de contacto */
-
-.fondo{
-    background-image:url(../img/fondocontacto.jpg);
-}
 
 .contact__form--p{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -316,9 +330,9 @@ button {
 
 
 
-/*   GRIDs & Mediaquery 600p */
+/*   GRIDs & Mediaquery 767p */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 767px) {
 
 
     .destacados {
@@ -329,14 +343,26 @@ button {
         height: 40vh;
         max-width: 100%;
     }
+
+    .navbar{
+        justify-content: center;
+        gap: 2rem;
+    }
     
 }
 
-@media screen and (min-width: 600px) {
 
+/* ----------- Mediaquery 768p ---------- */
+
+@media (min-width: 768px) {
 
     .destacados {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .header__img{
+        height: 45vh;
+        width: auto;
     }
 
     .catalago__container--img{
@@ -345,11 +371,6 @@ button {
         
     }
  
-}
-
-/* ----------- Mediaquery 768p ---------- */
-
-@media (min-width: 768px) {
     .navbar__menu--message{
         display:none;
     }
@@ -397,4 +418,10 @@ button {
     .catalago p{
         font-size: 2rem;
     }   
+
+    .header__img{
+        height: 50vh;
+        width: auto;
+    }
+
 }
